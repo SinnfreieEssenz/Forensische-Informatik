@@ -1,0 +1,43 @@
+\documentclass{report}
+
+\usepackage[german]{babel}
+\usepackage[a4paper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% Useful packages
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{subcaption}
+
+% Header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{}
+\lhead{Forensischer Untersuchungsbericht}
+\rfoot{Page \thepage}
+
+\title{Forensischer Untersuchungbericht}
+\author{name}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\part{Untersuchungsbericht}
+\include{1Prolog}
+\include{2Ergebniszusammenfassung}
+\include{3DetailErmittlung}
+
+\part{Anhang}
+\include{A1-Beweismittel}
+\include{A2-Arbeitsumgebung}
+\include{A3-Konsolenausgaben}
+
+
+\bibliographystyle{alpha}
+\bibliography{references}
+
+\end{document}
