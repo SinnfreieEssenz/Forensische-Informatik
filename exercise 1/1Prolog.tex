@@ -2,24 +2,18 @@
 
 \section{Beweismittel}
 
-Datenträger mit der SHA256-Summe:\\ 
-1f23fcf72f931e14a2762b3014b97f51e5031c045129d044287457a996b0c4cc
-
 \subsection{Identifikation}
 
-??
-echo "1f23fcf72f931e14a2762b3014b97f51e5031c045129d044287457a996b0c4cc exercise\_1.img" | sha256sum -c
-exercise\_1.img: OK
+Das Beweismittel ein Datenträger mit der SHA256-Summe\\
+1f23fcf72f931e14a2762b3014b97f51e5031c045129d044287457a996b0c4cc wurde von der Staatsanwaltschaft ausgehändigt, mit der von der Spurensicherung erstellten Hash-Summe zur Überprüfung der Echtheit des Datenträgers. Die Echtheit des Datenträgers konnte somit erfolgreich verifiziert werden. Daraufhin wurde eine 1 zu 1 Kopie des Datenträgers angefertigt, welche für die folgende Analyse verwendet wurde. Der orginale Datenträger wurde bis auf die Kopie für nichts anderes benutzt.
 
 \subsection{Verlauf}
+Der Ermittlungsverlauf des Falles sah wie folgt aus:
 	\begin{itemize}
-	\item Anfertigen von Hashsummen
-	\item Bestimmen des Partitionstyps
-	\item Analyse der Partitionstabelle
-	\item Analyse des Dateisystems
-	\item Analyse interessanter Dateien
-	\item File-Carving zum Auffinden nicht referenzierter Dateien
-	\item Prüfung der Integrität des Abbilds
+	\item Nachweis der Integrität des Asservats
+	\item Anfertigung einer Kopie
+	\item Analyse des Datenträgers und Suche nach rhinographischem Material
+	\item Mögliche Strafbarkeit von Jürgen S. aufgrund gefundener Bilder
 	\end{itemize}
 
 \section{Auftrag}
@@ -34,5 +28,11 @@ Die Staatsanwaltschaft händigt Ihnen das Abbild des Datenträgers aus. Die SHA2
 Die Staatsanwaltschaft erwartet Ihre Ergebnisse in Form eines Untersuchungsbe-richts bis zum13.05.2021 (23:59 Uhr).
 
 \section{Arbeitsumgebung}
-
-Oracle VM-Virtualbox mit Kali-Linux-2021.1-vbox-amd64
+Die komplette Untersuchung wurde ausschließlich unter folgenden Arbeitsbedingungen ausgeführt, wobei eine virtuelle Maschine benutzt wurde um externe Einflüsse zu minimieren:
+\begin{itemize}
+	\item Oracle VM-Virtualbox 6.0.24 
+	\item Kali-Linux-2021.1-vbox-amd64
+	\item The Sleuth Kit ver 4.10.1
+	\item TestDisk 7.1, Data Recovery Utility, July 2019
+	\item PhotoRec 7.1, Data Recovery Utility, July 2019
+\end{itemize}
