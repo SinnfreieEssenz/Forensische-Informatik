@@ -1,35 +1,36 @@
-\chapter{Detailierter Ermittlungsverlauf}
+\chapter{Analyse des Datenträgers} 
 
-\section{Zusammenfassung}
+\section{Sleuthkit}
 
-Der Master Boot Record ist beschädigt, da der Datenträger mit Linux partitioniert wurde. Die Analyse mit Testdisk einer Unknown Partition mit Quick Search liefert eine NTFS Partition bei deeper Search lassen sich 3 NTFS Partitionen erschließen.  Mithilfe von Photorec findet man außerhalb der Linux partition noch ein 4tes Bild von einem Nashorn. 
+Als erstes wurde die DOS Partition Table angeschaut (2.1). Hierbei erkannt man, dass vor der Linux Partition noch 3456 512-byte Sectoren liegen. Dort können sich versteckte Dateien entdecken lassen, es lohnt sich also ein FileCarving Tool über die Platte laufen zu lassen. Bei genauerer Untersuchung der Linux Partition (2.2) fällt auf, dass es sich um ein NTFS-Dateisystem handelt. Die einzigen NTFS unüblichen Dateien sind nashorn.jpg und nasohnehorn.jpg. Letzeres macht den Anschein, dass es gelöscht wurde, wobei dies nie mit 100\%-tiger Sicherheit belegt werden kann. Die Namen und Metadaten könnten allle beliebig manipuliert worden sein. Trotzdem lohnt es sich einen Blick draufzuwerfen, um einen Eindruck für die Gesmatsituatuin zu gewinnen. Nasohnehorn.jpg hat keinen zugewiesenen Speicher und wurde am 2015-09-23 um 10:49:36 zuletzt modifiziert (2.3).  Nashorn.jpg hat zugewiesenen Speicher und wurde am 2015-09-23 um 10:49:36 zuletzt modifiziert (2.4).
+ 
+\subsection{Strafbarkeit}
+Es ist davon auszugehen, dass Jürgen S. vom Bild nashorn.jpg in Kenntniss ist, da dies der einzige Inhalt auf der Platte ist und zudem unversteckt im Wurzelverzeichnis liegt. Somit wird beim Öffnen des Datenträgers das Bild angezeigt, falls ein graphischer File-Explorer verwendet wurde. Selbst ohne einen graphischen File-Explorer ist der Dateiname sehr auffällig und kann nicht übersehen werden. Somit hat sich Jürgen S. gemäß § 184k strafbar gemacht. Bei dem Bild nasohnehorn.jpg wird es schon schwieriger, da es nur mithilfe besonderer Tools sichtbar ist. Da es allerdings zur fast exakt selben Zeit (Unterschied in Millisekunden) zuletzt modifiziert wurde, wie Nashorn.jpg, von wessen Jürgen S. in Kenntniss ist, lässt sich darauf schließen, dass Jürgen S. das Bild selbst gelöscht hat. Dies ist sehr wahrscheinlich, allerdings nicht zwangsläufig Korrekt. Die Metadaten könnten immernoch manipuliert sein und wenn Jürgen S. nashorn.jpg nie benutzt hat und somit nie die Metadaten verändert hat, könnten diese gefälscht worden sein, bevor der Datenträger in Jürgen S. Besitzt gekommen ist.
 
-\section{Erzeugung einer Arbeitskopie}
+\section{Photorec}
+Photorec wurde mit den Standardeinstellungen mit auf No Partition mit Other filesystem types als ext2/ext3/ext4  verwendet.\\
+Es wurden Beweismaterial Abbildung 1-4 bei dem File Carving gefunden, mit den dazugehörigen Thumbnails für Abbildungen 2-4. Die Zeitstempel auf diesen Files klären lediglich auf, dass die Bilder geschossen worden, noch bevor der Datenträger in Jürgen S. Hände geriet (4.1). 
 
-TODO
+\subsection{Strafbarkeit}
+Über Jürgen S. Strafbarkeit lässt sich keine Aussage treffen, da nicht bekannt ist, ob die Bilder leicht zuganglich sind. Jürgen S. könnte nichts von ihnen gewusst haben, da sie schon gelöscht oder versteckt worden seien könnten. Lediglich die Tatsache, dass sich rhinographisches Material auf dem Datenträger befindet steht dadurch fest.
 
-\section{Auswertung des Master Boot Records}
+\section{Testdisk}
 
-Der Master Boot Record ist beschädigt, da der Datenträger mit Linux partitioniert wurde. Es lassen sich mithilfe von Testdisk allerdings noch 2 von drei alten NTFS Dateisysteme wiederherstellen.
-
-\section{Auswertung der Partitionstabelle}
-??
-\section{Erzeugung von Partitionskopien}
-
-TODO
-
-\section{Untersuchung der Partitionskopien}
+Die Analyse mit Testdisk einer Unknown Partition mit Quick Search liefert eine NTFS Partition. Der Datenträger ist 20 MB groß, die einzige NTFS Partition ist allerdings nur 19 MB groß. Mithilfe der Deeper Search Funktion lassen sich 2 weitere NTFS Partitionen entdecken (3.1). 
 
 \subsection{Untersuchung der ersten Partition}
-
-NTFS Dateisystem mit den Bildern nashorn.jpg und nasohnehorn.jpg, welche beide am 23.09.2015 um 10:49:36 Uhr auf den Datenträger geladen wurden.
+Größe 19 MB (3.2)\\
+NTFS Dateisystem mit dem Bild nashorn.jpg (57242 Bytes), welches am 23.09.2015 um 10:49 Uhr auf den Datenträger geladen wurden.
+Ansonsten ist nichts zu finden.
 
 \subsection{Untersuchung der zweiten Partition}
-
-Beschädigt und nicht wiederherstellbar.
-
-\subsection{Untersuchung der dritten Partition}
-
-Die Analyse mit Testdisk einer Unknown Partition mit Quick Search liefert eine NTFS Partition, auf welcher sich ein rhinographisches Bild remaining.jpg erstellt am 23.09.2015 findet.
+Größe 3273KB (3.3)\\
+NTFS Dateisystem beschädigt und nicht wiederherstellbar.
 
 \subsection{Untersuchung der dritten Partition}
+Größe 3273KB (3.4)\\
+NTFS Dateisystem mit dem Bild remaining.jpg(51096 Bytes) erstellt am 23.09.2015 um 10:49 Uhr.
+Ansonsten ist nichts zu finden.
+
+\subsection{Strafbarkeit}
+Das rhinographische Bild remaining.jpg kann Jürgen S. nur zur Last gelegt werden, wenn er über fortgeschrittene Informatik-Kentnisse besitzt, da seine Metadaten nicht als Beweis für den Besitz reichen. Ebenjene könnten von einer dritten boswilligen Partei manipuliert sein. Das rhinographische Bild nashorn.jpg sollte durchaus Jürgen S. bekannt seien, da es auf dem unbeschädigtem Haupteil der Partition liegt. Somit hat sich Jürgen S. gemäß § 184k strafbar gemacht.
